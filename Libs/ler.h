@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct matriz{
+typedef struct mat{
 
     int linhas; 
     int colunas;

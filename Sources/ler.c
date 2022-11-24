@@ -1,4 +1,5 @@
 #include "../Libs/ler.h"
+
 mat *leitura( char* caminhoArquivo ){
     
     FILE *arq;

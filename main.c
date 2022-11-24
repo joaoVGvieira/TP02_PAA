@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Libs/ler.h"
+#include "Libs/caminho.h"
 int main(){
     mat *matriz;
     int opc;
@@ -23,6 +23,7 @@ int main(){
             scanf(" %[^\n]s ",nome_arquivo);
             matriz = leitura(nome_arquivo);
             imprimir_matriz(matriz);
+            ProcuraCaminho(matriz,0,0);
             break;
         case 0 :
             printf("\nPROGRAMA ENCERRADO!\n\n");
