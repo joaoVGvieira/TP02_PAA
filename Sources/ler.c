@@ -15,9 +15,9 @@ mat *leitura( char* caminhoArquivo ){
         fscanf( arq, "%d %d", &matriz->linhas,  &matriz->colunas ); // lendo linhas e colunas
         // no arquivo separado por espaço
         
-        matriz->Matriz = ( int ** )malloc( sizeof( int ) * matriz->linhas * 2 );
+        matriz->Matriz = ( int ** )malloc( sizeof( int ) * matriz->linhas * matriz->colunas );
         for ( int i = 0; i < matriz->linhas; i++ ){
-            matriz->Matriz[i] = ( int * )malloc( sizeof( int ) * matriz->colunas * 2 );
+            matriz->Matriz[i] = ( int * )malloc( sizeof( int ) * matriz->linhas * matriz->colunas );
 
             for ( int j = 0; j < matriz->colunas; j++ ) {
                 int valor;
@@ -30,6 +30,11 @@ mat *leitura( char* caminhoArquivo ){
                 }
                 matriz->Matriz[i][j] = valor;
             }
+        }
+
+        matriz->matrizDistancias = ( celula ** )malloc( sizeof( celula ) * matriz->linhas );
+        for ( int i = 0; i < matriz->linhas; i++ ){
+            matriz->matrizDistancias[i] = ( celula * )calloc( sizeof( celula ) , matriz->colunas );
         }
     }
     
