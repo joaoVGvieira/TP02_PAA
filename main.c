@@ -27,8 +27,8 @@ int main(){
             matriz = leitura(nome_arquivo);
             ProcuraCaminho(matriz,0,0,&contaCaminhos, &menorCaminho, matriz->Matriz[0][0]);
             imprimir_matriz(matriz);
-            printf("Quantidade de caminhos: %d\n", contaCaminhos);
-            printf("Menor caminho: %d", menorCaminho);
+            printf("Soma Mínima: %d\n", menorCaminho);
+            printf("Quantidade de Caminhos: %d\n", contaCaminhos);
             break;
         case 0 :
             printf("\nPROGRAMA ENCERRADO!\n\n");
