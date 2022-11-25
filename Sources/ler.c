@@ -9,6 +9,7 @@ mat *leitura( char* caminhoArquivo ){
     arq = fopen( caminhoArquivo, "r" );
     if ( arq == NULL ) {
         printf("\nARQUIVO NAO ENCONTRADO\n");
+        return NULL;
     }
     else {
         printf("\nLEITURA DE ARQUIVO FEITA COM SUCESSO!\n");
@@ -36,8 +37,8 @@ mat *leitura( char* caminhoArquivo ){
         for ( int i = 0; i < matriz->linhas; i++ ){
             matriz->matrizDistancias[i] = ( celula * )calloc( sizeof( celula ) , matriz->colunas );
         }
+       
     }
-    
     fclose( arq );
     return matriz;
 }
