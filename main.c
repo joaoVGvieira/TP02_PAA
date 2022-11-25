@@ -5,7 +5,7 @@ int main(){
     mat *matriz;
     int opc;
     int contaCaminhos = 0;
-    int menorCaminho = 100000000;
+    int menorCaminho = 0;
     char nome_arquivo[1000];
     do
     {
@@ -21,11 +21,12 @@ int main(){
         switch (opc)
         {
         case 1 :
+            menorCaminho = 0;
             printf("\nDIGITE O NOME DO ARQUIVO DE ENTRADA: ");
             scanf(" %[^\n]s ",nome_arquivo);
             matriz = leitura(nome_arquivo);
-            imprimir_matriz(matriz);
             ProcuraCaminho(matriz,0,0,&contaCaminhos, &menorCaminho, matriz->Matriz[0][0]);
+            imprimir_matriz(matriz);
             printf("Quantidade de caminhos: %d\n", contaCaminhos);
             printf("Menor caminho: %d", menorCaminho);
             break;
@@ -37,5 +38,4 @@ int main(){
             break;
         }
     }while (opc!=0);    
-
 }
