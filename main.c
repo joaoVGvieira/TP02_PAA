@@ -14,7 +14,7 @@ int main(){
           " _________________(MENU PRINCIPAL)___________________ \n"
           "|                                                    |\n"
           "| LER ARQUIVO = 1                                    |\n"
-          "| IMPRIMIR CAMINHO COLORIDO = 2                      |\n"
+          "| VISUALIZAR CAMINHO COM CUSTO MÍNIMO = 2            |\n"
           "| ENCERRAR OPERACOES = 0                             |\n"
           "|____________________________________________________|\n\n");
         printf("DIGITE A OPERACAO DESEJADA: ");

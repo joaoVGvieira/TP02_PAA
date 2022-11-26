@@ -58,7 +58,7 @@ void imprimir_matriz( mat *matriz ){
 
 void printaMatrizColorida(mat* matriz){
 
-    printf("\n \t--- DEMOSTRACAO DO CAMINHO MININO COLORIDO ---\t\n\n");
+    printf("\n \t--- CAMINHO COM CUSTO MININO ---\t\n\n");
     int linha = matriz->linhas-1, coluna = matriz->colunas-1;
 
     for(int k = 0; k < matriz->colunas + matriz->linhas -1 ; k ++){
