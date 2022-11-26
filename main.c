@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "Libs/caminho.h"
 int main(){
-    mat *matriz;
+    mat *matriz = NULL;
     int opc;
     int contaCaminhos = 0;
     int menorCaminho = 0;
@@ -39,7 +39,6 @@ int main(){
             {
                 printaMatrizColorida(matriz);
             }
-            
             break;
         case 0 :
             printf("\nPROGRAMA ENCERRADO!\n\n");
