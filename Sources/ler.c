@@ -51,12 +51,13 @@ void imprimir_matriz( mat *matriz ){
                 } 
             printf("\n");   
         }
-
+        printf("\n");
+/* 
           printf("\n\t ------ MATRIZ  OUTRA------ \t\n\n");
              for(int i=0;i<matriz->linhas;i++){
                 for(int j=0;j<matriz->colunas;j++){
                     printf("%-2d ",matriz->matrizDistancias[i][j].distancia);
                 } 
             printf("\n");   
-        }
+        } */
 }
