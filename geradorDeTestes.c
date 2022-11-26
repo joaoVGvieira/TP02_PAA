@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-criar_arquivo(char* nome){
+void criar_arquivo(char* nome){
     FILE *arq;
     int linhas ,colunas;
     srand(time(NULL));
