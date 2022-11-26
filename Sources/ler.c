@@ -1,5 +1,6 @@
+#define ANSI_COLOR_RED     "\x1b[31m"  //cores em ANSI utilizadas 
+#define ANSI_COLOR_GRAY     "\e[0;37m"
 #include "../Libs/ler.h"
-
 mat *leitura( char* caminhoArquivo ){
     
     FILE *arq;
@@ -52,12 +53,67 @@ void imprimir_matriz( mat *matriz ){
             printf("\n");   
         }
         printf("\n");
-/* 
-          printf("\n\t ------ MATRIZ  OUTRA------ \t\n\n");
-             for(int i=0;i<matriz->linhas;i++){
-                for(int j=0;j<matriz->colunas;j++){
-                    printf("%-2d ",matriz->matrizDistancias[i][j].distancia);
-                } 
-            printf("\n");   
-        } */
+}
+
+
+void printaMatrizColorida(mat* matriz){
+
+    printf("\n \t--- DEMOSTRACAO DO CAMINHO MININO COLORIDO ---\t\n\n");
+    int linha = matriz->linhas-1, coluna = matriz->colunas-1;
+
+    for(int k = 0; k < matriz->colunas + matriz->linhas -1 ; k ++){
+
+
+        matriz->matrizDistancias[linha][coluna].anterior = 1;
+
+        if(coluna == 0){
+            linha -= 1;
+            continue;
+        } 
+        if(linha == 0) {
+            coluna -=1;
+            continue;
+        }
+
+        if(matriz->matrizDistancias[linha-1][coluna].distancia < matriz->matrizDistancias[linha][coluna-1].distancia){
+            linha = linha -1;
+        }
+        else coluna = coluna -1;
+        
+    }
+    linha = 0;
+    coluna = 0;
+    printf("\nINICIO  ");
+
+    for(int k = 0; k < matriz->colunas + matriz->linhas -1 ; k ++){
+        if(k == matriz->colunas + matriz->linhas -2) printf("(%d,%d)\n", linha, coluna);
+        else printf("(%d,%d) -> ", linha, coluna);
+
+        if(linha == matriz->linhas-1){
+            coluna ++;
+            continue;
+        }
+        if(coluna == matriz->colunas-1){
+            linha++;
+            continue;
+        }
+
+        if(matriz->matrizDistancias[linha+1][coluna].anterior == 1){
+            linha = linha +1;
+        }
+        else coluna = coluna +1;
+
+    }
+    printf("\n");
+    for(int i = 0; i < matriz->linhas; i ++){
+        for(int j = 0; j < matriz->colunas; j ++){
+            if(matriz->matrizDistancias[i][j].anterior == 1){
+                 printf( ANSI_COLOR_RED "%-4d " ANSI_COLOR_GRAY, matriz->Matriz[i][j]);
+            }else printf("%-4d ",matriz->Matriz[i][j]);
+        }
+
+        printf("\n");
+    }
+
+    printf("\n");
 }

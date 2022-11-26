@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 typedef struct{
 
     int distancia; // minima distancia de [0][0] até este ponto
@@ -20,3 +19,5 @@ typedef struct mat{
 mat *leitura( char* caminhoArquivo );
 
 void imprimir_matriz( mat *matriz );
+
+void printaMatrizColorida(mat* matriz);
