@@ -38,7 +38,7 @@ int main(){
     do
     {
         printf(
-          " \n_________________(MENU PRINCIPAL)___________________ \n"
+          " _________________(MENU PRINCIPAL)___________________ \n"
           "|                                                    |\n"
           "| CRIAR ARQUIVO = 1                                  |\n"
           "| ENCERRAR OPERACOES = 0                             |\n"
@@ -48,7 +48,7 @@ int main(){
         switch (opc)
         {
             case 1:
-                printf("Digite o nome do arquivo pra ser gerado (com txt):");
+                printf("Digite o nome do arquivo pra ser gerado (com .txt): ");
                 scanf(" %[^\n]s ",nome);
                 criar_arquivo(nome);
                 break;
