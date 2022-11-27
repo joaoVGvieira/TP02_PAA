@@ -36,10 +36,17 @@ mat *leitura( char* caminhoArquivo ){
 
         matriz->matrizDistancias = ( celula ** )malloc( sizeof( celula ) * matriz->linhas );
         for ( int i = 0; i < matriz->linhas; i++ ){
-            matriz->matrizDistancias[i] = ( celula * )calloc( sizeof( celula ) , matriz->colunas );
+            matriz->matrizDistancias[i] = ( celula * )malloc( sizeof( celula ) * matriz->colunas );
         }
        
     }
+
+     for(int i = 0; i < matriz->linhas; i ++){
+        for(int j = 0; j < matriz->colunas; j ++){
+            matriz->matrizDistancias[i][j].distancia = -1;
+        }
+    }
+
     fclose( arq );
     return matriz;
 }

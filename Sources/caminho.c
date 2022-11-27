@@ -1,7 +1,7 @@
 #include "../Libs/caminho.h"
 
 void ProcuraCaminho(mat* matriz, int linha, int coluna, int* contaCaminhosRepetidos, int *menorCaminho, int distancia){
-    if (matriz->matrizDistancias[linha][coluna].distancia == 0 || matriz->matrizDistancias[linha][coluna].distancia >= distancia)
+    if (matriz->matrizDistancias[linha][coluna].distancia == -1 || matriz->matrizDistancias[linha][coluna].distancia >= distancia)
     {
         matriz->matrizDistancias[linha][coluna].distancia = distancia;
     } else return;
