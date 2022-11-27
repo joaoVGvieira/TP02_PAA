@@ -48,7 +48,7 @@ void imprimir_matriz( mat *matriz ){
         printf("\n\t ------ MATRIZ ------ \t\n\n");
              for(int i=0;i<matriz->linhas;i++){
                 for(int j=0;j<matriz->colunas;j++){
-                    printf("%-2d ",matriz->Matriz[i][j]);
+                    printf("%-3d ",matriz->Matriz[i][j]);
                 } 
             printf("\n");   
         }
@@ -104,7 +104,7 @@ void printaMatrizColorida(mat* matriz){
         else coluna = coluna +1;
 
     }
-    printf("\n");
+    printf("\n ----- MATRIZ ORIGINAL -----\n");
     for(int i = 0; i < matriz->linhas; i ++){
         for(int j = 0; j < matriz->colunas; j ++){
             if(matriz->matrizDistancias[i][j].anterior == 1){
@@ -115,5 +115,16 @@ void printaMatrizColorida(mat* matriz){
         printf("\n");
     }
 
+    printf("\n ----- MATRIZ MEMOIZATION -----\n");
+
+    for(int i = 0; i < matriz->linhas; i ++){
+        for(int j = 0; j < matriz->colunas; j ++){
+            if(matriz->matrizDistancias[i][j].anterior == 1){
+                 printf( ANSI_COLOR_RED "%-4d " ANSI_COLOR_GRAY, matriz->matrizDistancias[i][j].distancia);
+            }else printf("%-4d ",matriz->matrizDistancias[i][j].distancia);
+        }
+
+        printf("\n");
+    }
     printf("\n");
 }

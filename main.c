@@ -14,7 +14,8 @@ int main(){
           " _________________(MENU PRINCIPAL)___________________ \n"
           "|                                                    |\n"
           "| LER ARQUIVO = 1                                    |\n"
-          "| VISUALIZAR CAMINHO COM CUSTO MÍNIMO = 2            |\n"
+          "| VISUALIZAR CAMINHO COM CUSTO MINIMO = 2            |\n"
+          "| DISTANCIS DE TODAS AS POSICOES = 3                 |\n"
           "| ENCERRAR OPERACOES = 0                             |\n"
           "|____________________________________________________|\n\n");
         printf("DIGITE A OPERACAO DESEJADA: ");
@@ -30,7 +31,7 @@ int main(){
             {
                 ProcuraCaminho(matriz,0,0,&contaCaminhos, &menorCaminho, matriz->Matriz[0][0]);
                 imprimir_matriz(matriz);
-                printf("Soma Mínima: %d\n", menorCaminho);
+                printf("Soma Minima: %d\n", menorCaminho);
                 printf("Quantidade de Caminhos: %d\n", contaCaminhos);
             }            
             break;
@@ -43,6 +44,13 @@ int main(){
         case 0 :
             printf("\nPROGRAMA ENCERRADO!\n\n");
             break;
+        case 3 :
+        if (matriz!= NULL)
+            {
+                memoizationIterativo(matriz);
+            }
+            break;
+
         default:
             printf("\nOPCAO INVALIDA!!!!\n");
             break;
