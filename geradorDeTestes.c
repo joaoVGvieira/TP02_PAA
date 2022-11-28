@@ -6,8 +6,8 @@ void criar_arquivo(char* nome){
     FILE *arq;
     int linhas ,colunas;
     srand(time(NULL));
-    linhas = 10;
-    colunas = 10;
+    linhas = rand() % (100 + 1 - 2) + 2;
+    colunas = rand() % (100 + 1 - 2) + 2;
     int matriz[linhas][colunas];
     for(int i = 0; i < linhas; i ++){
             for(int j = 0; j < colunas ; j ++){
