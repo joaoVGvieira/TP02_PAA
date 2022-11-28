@@ -71,7 +71,7 @@ void printaMatrizColorida(mat* matriz){
     for(int k = 0; k < matriz->colunas + matriz->linhas -1 ; k ++){
 
 
-        matriz->matrizDistancias[linha][coluna].anterior = 1;
+        matriz->matrizDistancias[linha][coluna].flag = 1;
 
         if(coluna == 0){
             linha -= 1;
@@ -105,7 +105,7 @@ void printaMatrizColorida(mat* matriz){
             continue;
         }
 
-        if(matriz->matrizDistancias[linha+1][coluna].anterior == 1){
+        if(matriz->matrizDistancias[linha+1][coluna].flag == 1){
             linha = linha +1;
         }
         else coluna = coluna +1;
@@ -114,7 +114,7 @@ void printaMatrizColorida(mat* matriz){
     printf("\n ----- MATRIZ ORIGINAL -----\n");
     for(int i = 0; i < matriz->linhas; i ++){
         for(int j = 0; j < matriz->colunas; j ++){
-            if(matriz->matrizDistancias[i][j].anterior == 1){
+            if(matriz->matrizDistancias[i][j].flag == 1){
                  printf( ANSI_COLOR_RED "%-4d " ANSI_COLOR_GRAY, matriz->Matriz[i][j]);
             }else printf("%-4d ",matriz->Matriz[i][j]);
         }
@@ -126,7 +126,7 @@ void printaMatrizColorida(mat* matriz){
 
     for(int i = 0; i < matriz->linhas; i ++){
         for(int j = 0; j < matriz->colunas; j ++){
-            if(matriz->matrizDistancias[i][j].anterior == 1){
+            if(matriz->matrizDistancias[i][j].flag == 1){
                  printf( ANSI_COLOR_RED "%-4d " ANSI_COLOR_GRAY, matriz->matrizDistancias[i][j].distancia);
             }else printf("%-4d ",matriz->matrizDistancias[i][j].distancia);
         }
