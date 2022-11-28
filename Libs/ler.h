@@ -3,7 +3,7 @@
 typedef struct{
 
     int distancia; // minima distancia de [0][0] até este ponto
-    short int flag; // 1 - cima    2 - esquerda   3 - pros dois
+    short int flag; 
 
 }celula;
 
