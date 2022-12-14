@@ -64,7 +64,7 @@ void ProcuraCaminhoComk(mat* matriz, int linha, int coluna, int* contaCaminhosRe
 
 void memoizationIterativo(mat* matriz){
     
-    int** temp = ( int ** )malloc( sizeof( int ) * matriz->linhas );
+    int** temp = ( int ** )malloc( sizeof( int* ) * matriz->linhas );
     for ( int i = 0; i < matriz->linhas; i++ ){
         temp[i] = ( int * )calloc( sizeof( int ) , matriz->colunas );
     }
@@ -74,7 +74,7 @@ void memoizationIterativo(mat* matriz){
     for(int j = matriz->colunas-1; j >= 0 ; j --){
         
         for(int i = matriz->linhas-1; i >= 0; i --){
-
+            printf("%d ", i);
             if( i == matriz->linhas-1 && j == matriz->colunas-1) continue;
             
             if(j == matriz->colunas-1){ 
