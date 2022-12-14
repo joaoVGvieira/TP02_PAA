@@ -74,7 +74,6 @@ void memoizationIterativo(mat* matriz){
     for(int j = matriz->colunas-1; j >= 0 ; j --){
         
         for(int i = matriz->linhas-1; i >= 0; i --){
-            printf("%d ", i);
             if( i == matriz->linhas-1 && j == matriz->colunas-1) continue;
             
             if(j == matriz->colunas-1){ 

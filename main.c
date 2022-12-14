@@ -17,7 +17,6 @@ int main(){
           "| LER ARQUIVO = 1                                    |\n"
           "| VISUALIZAR CAMINHO COM CUSTO MINIMO = 2            |\n"
           "| DISTANCIA DE TODAS AS POSICOES = 3                 |\n"
-          "| PROCURAR CAMINHO COM K = 4                         |\n"
           "| ENCERRAR OPERACOES = 0                             |\n"
           "|____________________________________________________|\n\n");
         printf("DIGITE A OPERACAO DESEJADA: ");
@@ -54,18 +53,6 @@ int main(){
                     memoizationIterativo(matriz);
                 }
                 break;
-        case 4 :
-            if (matriz!= NULL)
-                {
-                    printf("Digite K: ");
-                    scanf("%d",&k);
-                    ProcuraCaminhoComk(matriz,0,0,&contaCaminhos, &menorCaminho, matriz->Matriz[0][0],k);
-                    imprimir_matriz(matriz);
-                    printf("Soma Minima: %d\n", menorCaminho);
-                    printf("Quantidade de Caminhos: %d\n", contaCaminhos);
-                    menorCaminho = 0;
-                    contaCaminhos= 0;
-                }
         break;
         default:
             printf("\nOPCAO INVALIDA!!!!\n");
